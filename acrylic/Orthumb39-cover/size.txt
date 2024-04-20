@@ -1,0 +1,12 @@
+width 209.55mm
+height 95.25mm
+
+Data was created using kicad7.
+.dxf files are created using kicad plots.
+.svg files were also created using kicad plots. The .svg file was also created using the kicad plot.
+The .pdf files are converted from the processed .svg files using inkscape.
+The dimension.pdf file is created from kicad.
+I didn't mention that it was necessary, but I am attaching the .svg file as well, just in case.
+
+We would appreciate it if you could create it using the .pdf file if possible.
+We are not sure if the data in the .dxf file created from kicad is accurate, as the line widths are sometimes incorrect (double lines) when the file is loaded back into kicad.
