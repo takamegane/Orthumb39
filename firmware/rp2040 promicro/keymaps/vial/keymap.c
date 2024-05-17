@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 enum my_keycode{
-  NORMAL = SAFE_RANGE,
+  NORMAL = QK_KB_0,
   ACCEL
 };
 
@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
                          KC_LGUI, KC_LALT, KC_SPC,           KC_SPC,  KC_SPC,  KC_SPC, 
   //|-----------------------------------------------------+--------------------------------------------| 
-                                             KC_D,    KC_F,    KC_G       
+                                             NORMAL,    KC_F,   ACCEL       
   //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------'                          
   ),
   [1] = LAYOUT_ortho_5x10(
@@ -61,9 +61,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-// AZ1UBALL
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case NORMAL:
+      pimoroni_trackball_set_cpi(128*125); //Default Speed
+      break;
+    case ACCEL:                                      
+      pimoroni_trackball_set_cpi(2*128*125); // x2 Speed
+      break;
+  }
+  return true;
+}
+
+// Default Accellaration Mode
 void pointing_device_init_kb(void) {
-    uint8_t addr=0x14;
+    //uint8_t addr=0x14;
+    uint8_t addr=0x0a<<1;
     //uint8_t data[]={0x90, 0x00};    // AZ1UBALL normal speed mode
     uint8_t data[]={0x91, 0x00};      // AZ1UBALL accellaration mode
     uint16_t timeout=100;             // in milli-seconds
@@ -71,5 +84,5 @@ void pointing_device_init_kb(void) {
     status  = i2c_transmit (addr, data, 2, timeout);
     if (status != 0) {
         return;
-    }
+    }   
 }

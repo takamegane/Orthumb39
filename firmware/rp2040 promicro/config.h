@@ -20,5 +20,6 @@
 //#define NO_ACTION_ONESHOT
 
 /* AZ1UBALL settings */
-#define PIMORONI_TRACKBALL_SCALE 8    // default 5
+#define PIMORONI_TRACKBALL_SCALE 2    // default 5
 #define POINTING_DEVICE_ROTATION_90
+  

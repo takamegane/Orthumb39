@@ -1,0 +1,7 @@
+#define VIAL_KEYBOARD_UID {0x2C, 0x32, 0xD5, 0x6F, 0x09, 0x3E, 0xC3, 0x40}
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 1 }
+
+#define I2C1_SCL_PIN GP3    
+#define I2C1_SDA_PIN GP2
+#define I2C_DRIVER I2CD1  

@@ -3,4 +3,4 @@
 
 POINTING_DEVICE_ENABLE = yes
 POINTING_DEVICE_DRIVER = pimoroni_trackball
-
+I2C_DRIVER_REQUIRED = yes
