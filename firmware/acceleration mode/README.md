@@ -7,18 +7,29 @@ ACCEL…加速モード
 
 promicro利用の場合
 以下のキーコードを利用してください。
+
 User0…0X7E40→通常モード
+
 User1…0X7E41→加速モード
+
 加速モードだと通常モードの2倍のスピードになります。
+
 viaやremapを利用して変更して下さい。
 
 カーソル速度についてはconfig.h内
+
 #define PIMORONI_TRACKBALL_SCALE 〇    // default 5
+
 のSCALEを変更すると通常モードの速度が上がり、
+
 keymap.c内
+
  pimoroni_trackball_set_cpi(〇*128*125); // x2 Speed
+
  〇を変更することで倍速になります。
+
  promicro利用の場合は3倍以上を設定したところコンパイルでエラーが出たため、2倍にしてあります。
+ 
  お好みに合わせて変更してコンパイルしなおしてください。
 
 
